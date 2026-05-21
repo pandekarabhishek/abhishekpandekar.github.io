@@ -5,6 +5,11 @@
 (function () {
   'use strict';
 
+  /* ─── MARK JS AS LOADED (prevents blank page if JS fails) ──── */
+  // Adding this class to <html> is what enables the reveal animations in CSS.
+  // If this script never runs, .reveal elements stay visible by default.
+  document.documentElement.classList.add('js-loaded');
+
   /* ─── THEME TOGGLE ────────────────────────────────────────── */
   const html          = document.documentElement;
   const themeToggle   = document.getElementById('theme-toggle');
@@ -91,7 +96,7 @@
         }
       });
     },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
   );
 
   revealEls.forEach(el => revealObserver.observe(el));
