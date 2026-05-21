@@ -878,6 +878,16 @@ h1, h2, h3, h4 {
   margin-top: 3rem;
 }
 
+/* When form is removed, contact cards expand to a 2-col layout */
+.contact-grid--single {
+  grid-template-columns: 1fr;
+}
+.contact-grid--single .contact-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
 .contact-links {
   display: flex;
   flex-direction: column;
@@ -1125,7 +1135,9 @@ h1, h2, h3, h4 {
   .timeline { padding-left: 1.25rem; }
   .timeline-item { padding-left: 1.75rem; }
 
-  .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid,
+  .contact-grid--single { grid-template-columns: 1fr; }
+  .contact-grid--single .contact-links { grid-template-columns: 1fr; }
 
   .hero-stats {
     width: 100%;
